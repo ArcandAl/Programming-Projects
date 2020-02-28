@@ -1,0 +1,111 @@
+     Assembly listing for: hw4.mas
+                Assembled: Wed Oct 03 19:25:15 CDT 2018
+
+000 5000 |             INPUT                 
+001 2046 |             STORE X               
+002 5000 |  While      INPUT                 
+003 2047 |             STORE Y               
+004 1047 |             LOAD Y                
+005 8400 |             SKIPCOND 400          
+006 9008 |             JUMP If_1             
+007 9041 |             JUMP End_While        
+008 1047 |  If_1       LOAD Y                
+009 4046 |             SUBT X                
+00A 8000 |             SKIPCOND 000          
+00B 9014 |             JUMP Else_If_1        
+00C 900D |             JUMP And_Cond_1       
+00D 1048 |  And_Cond_1 LOAD Max              
+00E 4046 |             SUBT X                
+00F 8000 |             SKIPCOND 000          
+010 9014 |             JUMP Else_If_1        
+011 1046 |             LOAD X                
+012 2048 |             STORE Max             
+013 9023 |             JUMP If_2             
+014 1046 |  Else_If_1  LOAD X                
+015 4047 |             SUBT Y                
+016 8000 |             SKIPCOND 000          
+017 9020 |             JUMP Else_1           
+018 9019 |             JUMP And_Cond_2       
+019 1048 |  And_Cond_2 LOAD Max              
+01A 4047 |             SUBT Y                
+01B 8000 |             SKIPCOND 000          
+01C 9020 |             JUMP Else_1           
+01D 1047 |             LOAD Y                
+01E 2048 |             STORE Max             
+01F 9023 |             JUMP If_2             
+020 1048 |  Else_1     LOAD Max              
+021 2048 |             STORE Max             
+022 9023 |             JUMP If_2             
+         |                                  
+         |                                  
+023 1046 |  If_2       LOAD X                
+024 4047 |             SUBT Y                
+025 8000 |             SKIPCOND 000          
+026 9031 |             JUMP Else_If_2        
+027 9028 |             JUMP And_Cond_3       
+028 1046 |  And_Cond_3 LOAD X                
+029 4049 |             SUBT Min              
+02A 8000 |             SKIPCOND 000          
+02B 9031 |             JUMP Else_If_2        
+02C 1046 |             LOAD X                
+02D 2049 |             STORE Min             
+02E 1047 |             LOAD Y                
+02F 2046 |             STORE X               
+030 9002 |             JUMP While            
+031 1047 |  Else_If_2  LOAD Y                
+032 4046 |             SUBT X                
+033 8000 |             SKIPCOND 000          
+034 903E |             JUMP Else_2           
+035 9036 |             JUMP And_Cond_4       
+036 1047 |  And_Cond_4 LOAD Y                
+037 4049 |             SUBT Min              
+038 8000 |             SKIPCOND 000          
+039 903E |             JUMP Else_2           
+03A 1047 |             LOAD Y                
+03B 2049 |             STORE Min             
+03C 2046 |             STORE X               
+03D 9002 |             JUMP While            
+03E 1049 |  Else_2     LOAD Min              
+03F 2049 |             STORE Min             
+040 9002 |             JUMP While            
+         |                                  
+041 1048 |  End_While  LOAD Max              
+042 6000 |             OUTPUT                
+043 1049 |             LOAD Min              
+044 6000 |             OUTPUT                
+045 7000 |             HALT                  
+         |                                  
+046 0000 |  X          DEC 0                 
+047 0000 |  Y          DEC 0                 
+048 0000 |  Max        DEC 0                 
+049 0000 |  Min        DEC 0                 
+
+Assembly successful.
+
+         SYMBOL TABLE
+         ------------------------------------------------------
+          Symbol     | Defined | References 
+         ------------+---------+-------------------------------
+          And_Cond_1 |   00D   | 00C
+          And_Cond_2 |   019   | 018
+          And_Cond_3 |   028   | 027
+          And_Cond_4 |   036   | 035
+          Else_1     |   020   | 017, 01C
+          Else_2     |   03E   | 034, 039
+          Else_If_1  |   014   | 00B, 010
+          Else_If_2  |   031   | 026, 02B
+          End_While  |   041   | 007
+          If_1       |   008   | 006
+          If_2       |   023   | 013, 01F, 022
+          Max        |   048   | 00D, 012, 019, 01E, 020, 021, 
+                     |         | 041
+          Min        |   049   | 029, 02D, 037, 03B, 03E, 03F, 
+                     |         | 043
+          While      |   002   | 030, 03D, 040
+          X          |   046   | 001, 009, 00E, 011, 014, 023, 
+                     |         | 028, 02C, 02F, 032, 03C
+          Y          |   047   | 003, 004, 008, 015, 01A, 01D, 
+                     |         | 024, 02E, 031, 036, 03A
+         ------------------------------------------------------
+
+

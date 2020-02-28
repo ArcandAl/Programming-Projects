@@ -1,0 +1,78 @@
+	Input
+	Store X
+While,  Input				
+	Store Y
+	Load Y
+	Skipcond 400 	
+	Jump If_1
+	Jump End_While
+If_1,	Load Y
+	Subt X
+	Skipcond 000
+	Jump Else_If_1
+	Jump And_Cond_1
+And_Cond_1, Load Max
+	Subt X
+	Skipcond 000
+	Jump Else_If_1
+	Load X
+	Store Max
+	Jump If_2
+Else_If_1, Load X
+	Subt Y
+	Skipcond 000
+	Jump Else_1
+	Jump And_Cond_2
+And_Cond_2, Load Max
+	Subt Y
+	Skipcond 000
+	Jump Else_1
+	Load Y
+	Store Max
+	Jump If_2
+Else_1,	Load Max
+	Store Max
+	Jump If_2
+
+
+If_2,	Load X
+	Subt Y
+	Skipcond 000
+	Jump Else_If_2
+	Jump And_Cond_3
+And_Cond_3, Load X
+	Subt Min
+	Skipcond 000
+	Jump Else_If_2
+	Load X
+	Store Min
+	Load Y
+	Store X
+	Jump While
+Else_If_2, Load Y
+	Subt X
+	Skipcond 000
+	Jump Else_2
+	Jump And_Cond_4
+And_Cond_4, Load Y
+	Subt Min
+	Skipcond 000
+	Jump Else_2
+	Load Y
+	Store Min
+	Store X
+	Jump While
+Else_2,	Load Min
+	Store Min
+	Jump While
+
+End_While, Load Max
+	Output
+	Load Min
+	Output	
+	Halt
+
+X,	Dec 0
+Y, 	Dec 0
+Max,	Dec 0
+Min,	Dec 0
