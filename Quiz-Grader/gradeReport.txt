@@ -1,0 +1,9 @@
+        Student Quiz Report         
+
+
+Student Name       Quiz 1    Quiz 2    Quiz 3    Quiz 4    Quiz 5    Quiz 6    Quiz 7    Total Quiz Points     Overall Quiz % 
+-----------------------------------------------------------------------------------------------------------------------------
+Doe, Jane             3         6         7         5         7         7       1              30                 71.4
+Jones, Tom            3         6         7         5         7         7       1              40                 95.2
+Kidd, Billy           3         6         7         5         7         7       1              35                 83.3
+Smith, Sally          3         6         7         5         7         7       1              36                 85.7
