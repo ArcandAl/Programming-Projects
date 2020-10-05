@@ -1,1 +1,1 @@
-Holds various programs based around algorithms
+Holds various programs focused on algorithms
