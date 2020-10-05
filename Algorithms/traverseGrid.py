@@ -2,6 +2,11 @@
 Author: Alec Arcand
 Breadth First Search implemented to
 traverse grid represented by a string
+
+Traverses an nxn grid represented by a single 
+string to find a goal node. Possible moves are 
+the value of the current node. The path of the 
+start node to the end node is returned
 """
 
 class bfs:
