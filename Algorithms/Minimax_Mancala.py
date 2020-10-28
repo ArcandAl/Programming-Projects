@@ -1,3 +1,10 @@
+"""
+Author: Alec Arcand
+Minimax algorithm implemented to solve 
+the game Mancala. The Mancala board is represented
+by a string.
+"""
+
 def makeMove(board, position):
     boardCopy = board.copy()
     if position == -1:
