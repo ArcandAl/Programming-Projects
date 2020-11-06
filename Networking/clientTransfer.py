@@ -2,8 +2,8 @@ import socket
 import time
 
 def Main(protocol):
-    Host = socket.gethostname()#'127.0.0.1'  #socket.gethostname()
-    Port = 5001 #65002 #5001
+    Host = socket.gethostname()#'127.0.0.1'
+    Port = 5001 #65002
     if protocol.lower() == "t":
         Soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #TCP
 
