@@ -1,7 +1,7 @@
 import socket
 
 def Main(option):
-    host = socket.gethostname()#"127.0.0.1" #socket.gethostname()  #returns string of hostname of machine
+    host = socket.gethostname()  #"127.0.0.1"
     port = 5001 #65002
 
     if option == "TCP":
