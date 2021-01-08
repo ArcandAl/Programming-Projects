@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My First App</string>
+    <string name="edit_message">Enter Town and Bounty Name</string>
+    <string name="text_show">Bounty And Time Will Be Displayed Here</string>
+    <string name="button_timer">Start</string>
+    <string name="display_button">Display</string>
+</resource
