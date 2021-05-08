@@ -1,5 +1,9 @@
 from cardDeck import Deck
 
+# return 0 if dealer win
+# return 1 if player win
+# return 2 if tie
+
 
 def main():
     deck = Deck(6)
@@ -22,7 +26,7 @@ def main():
     if scoreHand(playerHand) > 21:
         print("\nDealer: ", dealerHand)
         print("Player ", playerHand)
-        print("\nDealer Wins")
+        print("\nDealer Wins, Player busted")
         return 0
 
     while scoreHand(dealerHand) <= 16:
