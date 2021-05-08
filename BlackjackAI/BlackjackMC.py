@@ -12,24 +12,31 @@ def main():
     decision = []
     playerHand = []
     dealerHand = []
-    playerHand = []
-    dealerHand = []
     for i in range(2):
         playerHand.append(deck.deal())
         dealerHand.append(deck.deal())
 
+    if dealerHand[1][0] == "1":
+        upCard = "10"
+    else:
+        upCard = dealerHand[1][0]
+
+    cards += [[scoreHand(playerHand), upCard]]
+
+    # Check if player has blackjack
     if scoreHand(playerHand) == 21:
-        cards += [[scoreHand(playerHand), dealerHand[1][0]]]
+        # record current score of player hand and 1 "face up" card of dealer
+        cards += [[scoreHand(playerHand), upCard]]
         decision += ["Stay"]
         return 1, cards, decision
 
-    # choose randomly to hit or stay for monte carlo
+    # choose randomly to hit or stay (monte carlo)
     for i in range(4):
         action = random.choice(["Hit", "Stay"])
 
         if action == "Hit":
-            cards += [[scoreHand(playerHand), dealerHand[1][0]]]
             playerHand.append(deck.deal())
+            cards += [[scoreHand(playerHand), upCard]]
             if scoreHand(playerHand) > 21:
                 # Player busted, should have stayed instead
                 decision += ["Stay"]
@@ -42,7 +49,7 @@ def main():
                 decision += ["Hit"]
 
         else:
-            cards += [[scoreHand(playerHand), dealerHand[1][0]]]
+            cards += [[scoreHand(playerHand), upCard]]
 
             while scoreHand(dealerHand) <= 16:
                 dealerHand.append(deck.deal())
@@ -95,8 +102,10 @@ def checkWin(dealer, player, decision):
         return 2, decision
 
 
-
 if __name__ == '__main__':
-    result, data, action = main()
-    print(data)
-    print(action)
+    file = open("Strategy.txt", "w")
+    for i in range(100):
+        result, data, action = main()
+        file.write('{} {} \n'.format(data, action))
+
+    file.close()
