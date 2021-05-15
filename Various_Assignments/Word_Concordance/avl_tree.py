@@ -105,17 +105,3 @@ class AVLTree(BinarySearchTree):
 
 
         return strHelper(self.root, 0)
-'''
-def main():
-    t = AVLTree()
-    t.put(15,15)
-    t.put(8,8)
-    t.put(18,18)
-    t.put(4, 4)
-    t.put(2,2)
-    t.put(6,6)
-    print(t)
-    return t
-
-if __name__ == "__main__": t = main()
-'''
