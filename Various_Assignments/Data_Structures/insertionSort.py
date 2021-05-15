@@ -3,6 +3,8 @@
     File:  insertionSort.py
 '''
 
+import random
+
 def insertionSort(myList):
     """Rearranges the items in myList so they are in ascending order"""
     for firstUnsortedIndex in range(1,len(myList)):
@@ -18,7 +20,6 @@ def insertionSort(myList):
         # Insert the itemToInsert at the correct spot
         myList[testIndex + 1] = itemToInsert
 
-import random
 
 def shuffle(myList):
     for fromIndex in range(len(myList)):
@@ -26,50 +27,3 @@ def shuffle(myList):
         temp = myList[fromIndex]
         myList[fromIndex] = myList[toIndex]
         myList[toIndex] = temp
-
-
-import time
-
-print("insertionSort Timings")
-aList = list(range(10000,0,-1))
-print( "\nBefore sorting list: ",end="")
-print( aList[0],aList[1],aList[2], '...',aList[-3], aList[-2],aList[-1])
-start = time.clock()
-insertionSort(aList)
-end = time.clock()
-print( "sorted list:", end="")
-print( aList[0],aList[1],aList[2], '...',aList[-3], aList[-2],aList[-1])
-print( "Time to sort",end - start,"seconds")
-
-print( "\nBefore sorting list: ", end="")
-print( aList[0],aList[1],aList[2], '...',aList[-3], aList[-2],aList[-1])
-start = time.clock()
-insertionSort(aList)
-end = time.clock()
-print( "sorted list:", end="")
-print( aList[0],aList[1],aList[2], '...',aList[-3], aList[-2],aList[-1])
-print( "Time to sort",end - start,"seconds")
-
-aList = list(range(10000,0,-1))
-shuffle(aList)
-print( "\nBefore sorting (random) list: ",end="")
-print( aList[0],aList[1],aList[2], '...',aList[-3], aList[-2],aList[-1])
-start = time.clock()
-insertionSort(aList)
-end = time.clock()
-print( "sorted list:",end="")
-print( aList[0],aList[1],aList[2], '...',aList[-3], aList[-2],aList[-1])
-print( "Time to sort",end - start,"seconds")
-
-aList = list(range(10000,0,-1))
-shuffle(aList)
-print( "\nBefore sorting (random) list: ",end='')
-print( aList[0],aList[1],aList[2], '...',aList[-3], aList[-2],aList[-1])
-start = time.clock()
-insertionSort(aList)
-end = time.clock()
-print( "sorted list:",end="")
-print( aList[0],aList[1],aList[2], '...',aList[-3], aList[-2],aList[-1])
-print( "Time to sort",end - start,"seconds")
-
-input("Hit <Enter>-key to end")
