@@ -42,38 +42,13 @@ class OrderedList(object):
 
 
 
-        # START OF SEARCH - DO NOT MODIFY BELOW CODE
         if self._current != None and self._current.getData() == targetItem:
             return True
 
         self._previous = None
         self._current = self._head
         self._currentIndex = 0
-        return searchHelper()  # Returns the result of searchHelper
-
-##    NON-RECURSIVE CODE WE ARE REPLACING
-##    def search(self, targetItem):
-##        """ Searches for the targetItem in the list.
-##            Precondition: none.
-##            Postcondition:  Returns True and makes it the current item if targetItem is in the list;
-##                            otherwise False is returned.
-##        """
-##        if self._current != None and self._current.getData() == targetItem:
-##            return True
-##
-##        self._previous = None
-##        self._current = self._head
-##        self._currentIndex = 0
-##        while self._current != None:
-##            if self._current.getData() == targetItem:
-##                return True
-##            elif self._current.getData() > targetItem:
-##                return False
-##            else: #inch-worm down list
-##                self._previous = self._current
-##                self._current = self._current.getNext()
-##                self._currentIndex += 1
-##        return False
+        return searchHelper()
 
     def add(self, newItem):
         """ Adds the newItem to is sorted spot in the list.
@@ -184,31 +159,3 @@ class OrderedList(object):
                 return str(current.getData()) + " " + strHelper(current.getNext())
         resultStr = "(head) " + strHelper(self._head) + "(tail)"
         return resultStr
-
-##    def __str__(self):
-##        """ Removes and returns the item at position pos of the list.
-##            Precondition:  position pos exists in the list.
-##            Postcondition:  Removes and returns the item at position pos of the list.
-##        """
-##        resultStr = "(head)"
-##        current = self._head
-##        while current != None:
-##            resultStr += " " + str(current.getData())
-##            current = current.getNext()
-##        return resultStr + " (tail)"
-
-
-if __name__ == '__main__':
-    myList = OrderedList()
-    assert myList.search('a') == False
-    myList.add('3')
-    myList.add('5')
-    myList.add('7')
-    assert myList.search('1') == False
-    assert myList.search('3') == True
-    assert myList.search('4') == False
-    assert myList.search('5') == True
-    assert myList.search('6') == False
-    assert myList.search('7') == True
-    assert myList.search('8') == False
-    print("ALL SEARCH TESTS PASSED!!!")
