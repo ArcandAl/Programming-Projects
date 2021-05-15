@@ -1,4 +1,4 @@
-Underground Research Project
+Undergrad Research Project
 
 First created a simple program to play blackjack
 Then created a version that uses Monte Carlo simulations to collect data about the outcome of the game
