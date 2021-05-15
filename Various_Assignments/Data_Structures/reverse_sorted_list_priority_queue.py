@@ -38,23 +38,3 @@ class ReverseSortedListPriorityQueue:
             yield self._items[currentIndex]
             currentIndex += 1
         raise StopIteration
-
-if __name__ == '__main__':
-    q = ReverseSortedListPriorityQueue()
-    print("q.enqueue(5)")
-    q.enqueue(5)
-    print("q.enqueue(7)")
-    q.enqueue(7)
-    print("q.enqueue(3)")
-    q.enqueue(3)
-    print("q.enqueue(4)")
-    q.enqueue(4)
-    print("q.enqueue(1)")
-    q.enqueue(1)
-    print("q.enqueue(9)")
-    q.enqueue(9)
-    print("q:",q)
-    print("q.dequeue():",q.dequeue())
-    print("q:",q)
-    for item in q:
-        print(item)
