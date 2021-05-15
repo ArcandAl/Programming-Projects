@@ -164,17 +164,4 @@ class BinarySearchTree:
         return heightHelper(self.root)
 
         return heightHelper(self.root)
-'''
-def main():
-    t = BinarySearchTree()
-    t.put(5,5)
-    t.put(3,3)
-    t.put(8,8)
-    t.put(10, 10)
-    t.put(7,7)
-    print(t)
-    print("Height:",t.height())
-    return t
 
-if __name__ == "__main__": t = main()
-'''
