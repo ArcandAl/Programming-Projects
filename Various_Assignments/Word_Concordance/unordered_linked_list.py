@@ -197,25 +197,3 @@ class UnorderedList(object):
             yield current.getData()
             current = current.getNext()
         raise StopIteration
-
-        
-            
-        
-        
-
-        
-
-    
-
-
-        
-        
-                
-                
-
-        
-    
-
-    
-        
-    
