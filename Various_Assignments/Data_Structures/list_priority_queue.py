@@ -29,20 +29,3 @@ class ListPriorityQueue:
         listCopy = [] + self._items
         listCopy.sort()
         return iter(listCopy)
-
-
-if __name__ == '__main__':
-    q = ListPriorityQueue()
-    print("q.enqueue(5)")
-    q.enqueue(5)
-    print("q.enqueue(7)")
-    q.enqueue(7)
-    print("q.enqueue(3)")
-    q.enqueue(3)
-    print("q.enqueue(4)")
-    q.enqueue(4)
-    print(q)
-    print("q.dequeue():",q.dequeue())
-    print("q:",q)
-    for item in q:
-        print(item)
