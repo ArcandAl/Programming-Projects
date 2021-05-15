@@ -3,6 +3,8 @@
     File:  selectionSort.py
 '''
 
+import random
+
 def selectionSort(aList):
     for lastUnsortedIndex in range(len(aList)-1, 0, -1):
         # look for maximum item in unsorted part of list
@@ -19,7 +21,6 @@ def selectionSort(aList):
         aList[lastUnsortedIndex] = aList[maxIndex]
         aList[maxIndex] = temp
 
-import random
 
 def shuffle(myList):
     for fromIndex in range(len(myList)):
@@ -27,50 +28,3 @@ def shuffle(myList):
         temp = myList[fromIndex]
         myList[fromIndex] = myList[toIndex]
         myList[toIndex] = temp
-
-
-import time
-
-print("selectionSort Timings")
-aList = list(range(10000,0,-1))
-print( "\nBefore sorting list: ",end="")
-print( aList[0],aList[1],aList[2], '...',aList[-3], aList[-2],aList[-1])
-start = time.clock()
-selectionSort(aList)
-end = time.clock()
-print( "sorted list:", end="")
-print( aList[0],aList[1],aList[2], '...',aList[-3], aList[-2],aList[-1])
-print( "Time to sort",end - start,"seconds")
-
-print( "\nBefore sorting list: ", end="")
-print( aList[0],aList[1],aList[2], '...',aList[-3], aList[-2],aList[-1])
-start = time.clock()
-selectionSort(aList)
-end = time.clock()
-print( "sorted list:", end="")
-print( aList[0],aList[1],aList[2], '...',aList[-3], aList[-2],aList[-1])
-print( "Time to sort",end - start,"seconds")
-
-aList = list(range(10000,0,-1))
-shuffle(aList)
-print( "\nBefore sorting (random) list: ",end="")
-print( aList[0],aList[1],aList[2], '...',aList[-3], aList[-2],aList[-1])
-start = time.clock()
-selectionSort(aList)
-end = time.clock()
-print( "sorted list:",end="")
-print( aList[0],aList[1],aList[2], '...',aList[-3], aList[-2],aList[-1])
-print( "Time to sort",end - start,"seconds")
-
-aList = list(range(10000,0,-1))
-shuffle(aList)
-print( "\nBefore sorting (random) list: ",end='')
-print( aList[0],aList[1],aList[2], '...',aList[-3], aList[-2],aList[-1])
-start = time.clock()
-selectionSort(aList)
-end = time.clock()
-print( "sorted list:",end="")
-print( aList[0],aList[1],aList[2], '...',aList[-3], aList[-2],aList[-1])
-print( "Time to sort",end - start,"seconds")
-
-input("Hit <Enter>-key to end")
