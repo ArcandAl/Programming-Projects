@@ -74,28 +74,4 @@ class ChainingDict(object):
             for entry in myList:
                 yield entry.getKey()
         raise StopIteration
-'''
-def main():
-    d = ChainingDict(3)
-    d["Name"] = "Bob"
-    d["Age"] = 26
-    d["Color"] = "red"
-    print("Items from iterator:")
-    for item in d:
-        print(item)
-    print( d)
-    print( "Expect True:", "Name" in d)
-    print( "Expect Bob:", d["Name"])
-    print( "Expect None:", d["Address"])
-    d["Age"] = 27
-    print( "Expect 27:", d["Age"])
-    del d["Name"]
-    del d["Address"]
-    print (d)
-    print("Items from iterator:")
-    for item in d:
-        print(item)
-    return d
 
-if __name__ == "__main__": d = main()
-'''
