@@ -103,21 +103,3 @@ class OpenAddrHashDict(object):
 
     def loadFactor(self):
         return len(self._table)/self._size
-
-'''
-def main():
-    """Uses an example data set from Chapter 19."""
-    table = OpenAddrHashDict(8, lambda x : x)
-    for item in (range(10, 71, 10)):
-        table[item] = ""
-        print( "item:", item, "Home:", table.homeIndex(), "Probes:", table.probeCount(), \
-              "Load factor:", table.loadFactor())
-        print( table)
-    table[2] = ""
-    print( "item:", item, "Home:", table.homeIndex(), "Probes:", table.probeCount(), \
-          "Load factor:", table.loadFactor())
-    print( table)
-    return table
-
-if __name__ == "__main__": t = main()
-'''
