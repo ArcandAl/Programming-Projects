@@ -1,4 +1,4 @@
-rom chaining_dictionary import ChainingDict
+from chaining_dictionary import ChainingDict
 from open_addr_hash_dictionary import OpenAddrHashDict
 from avl_tree import AVLTree
 from binary_search_tree import BinarySearchTree
